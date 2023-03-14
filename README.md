@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/80Fsp5f.gif" width="300"/>
+<img src="https://i.imgur.com/z7Bwr3F.gif" width="300"/>
 
 # Pep
 
@@ -35,7 +35,7 @@ We'll cover other ways to peek ahead and inspect the default configurations ahea
 
 ### Prettier
 
-[You can view all the changes pep makes to add prettier to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/7fbc040b2b13cbb1aee85f55f1ea8559bc3e0d57).
+[You can view all the changes pep makes to add prettier to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/9e9e517eb7818fa035ab0812161b48a17c0633a2).
 
 [You can view the default prettier configuration here](https://github.com/pachun/Pep/blob/5c6e2661ddb25bc832d916cc13259ac3037ab2e6/lib/pep.rb#L79).
 
@@ -43,7 +43,7 @@ Once you've created a project with `pep`, you can view or edit the prettier conf
 
 ### Eslint
 
-[You can view all the changes pep makes to add eslint to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/8e9b6782a5e3ed78de0be09f5019d1bcff33938e).
+[You can view all the changes pep makes to add eslint to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/292fe31862798021aef3435557dbc0b8c3dfecec).
 
 [You can view the default eslint configuration here](https://github.com/pachun/Pep/blob/5c6e2661ddb25bc832d916cc13259ac3037ab2e6/lib/pep.rb#L190).
 
@@ -51,7 +51,7 @@ Once you've created a project with `pep`, you can view or edit the eslint config
 
 ### Typescript
 
-[You can view all the changes pep makes to configure typescript in a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/09b5de0b6b00727a23d8d0b824859dc55d04ea5e).
+[You can view all the changes pep makes to configure typescript in a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/71e9ccdcfbda186bb84382f32e7417ec69759a95).
 
 [You can view the default _changes_ made to expo's default typescript configuration here](https://github.com/pachun/Pep/blob/5c6e2661ddb25bc832d916cc13259ac3037ab2e6/lib/pep.rb#L135).
 
@@ -82,7 +82,7 @@ The default expo `tsconfig.json` combined with `pep`'s changes ([which are discu
 
 ### Absolute Imports
 
-[You can view all the changes pep makes to add absolute imports to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/ef6af8d52eb86aa7f83cbc2343537426240c7561).
+[You can view all the changes pep makes to add absolute imports to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/e5e7bab8882781bf9224d942c34ca156f844ca39).
 
 Once a new project is created with pep, you can always import code relative to the src/ directory.
 
@@ -110,7 +110,7 @@ The setup for this feature touches several configuration files, including: `.esl
 
 ### React Navigation
 
-[You can view all the changes pep makes to add React Navigation to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/1d3825cb604f896f7a310a03cecd74cfe0474908).
+[You can view all the changes pep makes to add React Navigation to a default Expo project here](https://github.com/pachun/a-default-pep-app/commit/bda977975b0bcde4c15ffd8fd8ff8c76dce2c0fb).
 
 Your default `src/App.tsx` file will look like this after setting up a new pep project:
 
