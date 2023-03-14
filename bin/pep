@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "pep"
+
+first_cli_arg = ARGV[0]
+if !first_cli_arg
+  puts "Usage: pep your-apps-name"
+  exit
+end
+
+run_pep(with_app_name: first_cli_arg)
