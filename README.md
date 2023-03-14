@@ -76,6 +76,8 @@ The default expo `tsconfig.json` combined with `pep`'s changes ([which are discu
 
 Once a new project is created with pep, you can always import code relative to the src/ directory.
 
+... For Example ...
+
 If you are importing the component in `src/components/FancyTextInput.tsx` from `src/screens/HomeScreen.tsx`, you can do so like this:
 
 ```typescript
@@ -88,19 +90,19 @@ import FancyTextInput from "components/FancyTextInput"
 import FancyTextInput from "../components/FancyTextInput"
 ```
 
-I've found this setting enables easier refactoring when moving files around.
+I've found this setting enables easier refactoring when copying and pasting import lines, and especially when moving files around.
 
-The best way to view the changes that go into making this feature work is to inspect the commit titled `Set /src as the root directory for app code` after creating a new `pep` project.
+The best way to view the changes that go into making this feature work is to inspect the commit titled "`Set /src as the root directory for app code`" after creating a new `pep` project.
 
 The setup for this feature touches several configuration files, including: `.eslintrc.js`, `babel.config.js`, and `tsconfig.json`.
 
-[You can skim through this class to get an idea of what exactly gets changed before creating a new project with pep, if you're so inclined](https://github.com/pachun/Pep/blob/5c6e2661ddb25bc832d916cc13259ac3037ab2e6/lib/pep.rb#L229).
+[You can skim through this class to get an idea of what exactly gets changed before creating a new project with pep](https://github.com/pachun/Pep/blob/5c6e2661ddb25bc832d916cc13259ac3037ab2e6/lib/pep.rb#L229).
 
 ### React Navigation
 
 Your default `src/App.tsx` file will look like this after setting up a new pep project:
 
-```typescript
+```react
 import { Button, Text, TextInput, View } from "react-native"
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
@@ -197,6 +199,10 @@ const Stack = createNativeStackNavigator<StackNavigatorParams>()
 ... As well as the creation of a type for the top level screens's component props ...
 
 ```typescript
+import type { NativeStackScreenProps } from "@react-navigation/native-stack"
+
+// ...
+
 type HomeProps = NativeStackScreenProps<StackNavigatorParams, "Home">
 type DetailsProps = NativeStackScreenProps<StackNavigatorParams, "Details">
 
@@ -232,6 +238,27 @@ const { homeScreensTextInputValue } = route.params
 
 [Every time I go to setup React Navigation, it's been long enough since the last time that I did it that I have to go back and re-read the docs over here](https://reactnavigation.org/docs/typescript/).
 
+Pep also creates a custom React Navigation theme and applies it:
+
+```typescript
+import { DefaultTheme } from "@react-navigation/native"
+
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "#fff",
+  },
+}
+
+const App = (): React.ReactElement => (
+  <NavigationContainer theme={MyTheme}>
+    // ...
+  </NavigationContainer>
+)
+```
+
+The only thing which `pep` actually changes here is the default screen background colors, which it sets to white because React Navigation defaults screen background colors to a slightly off-gray color which I find myself also consistently looking back in the docs for how to switch that back to white.
 
 # 💃
 
