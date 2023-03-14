@@ -1,3 +1,5 @@
+<img src="https://i.imgur.com/80Fsp5f.gif" width="300"/>
+
 # Pep
 
 Begin your new expo app projects with some pep; that is, including:
@@ -8,8 +10,7 @@ Begin your new expo app projects with some pep; that is, including:
 * [React Navigation](https://reactnavigation.org)
 * Absolute imports relative to your `src/` directory
 
-<img src="https://i.imgur.com/XlEyADo.png" width="450"/>
-<img src="https://i.imgur.com/80Fsp5f.gif" width="200"/>
+<img src="https://i.imgur.com/XlEyADo.png" width="650"/>
 
 ## Get Started
 
