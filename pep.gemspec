@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "pep"
-  s.version     = "0.0.2"
+  s.version     = "0.0.3"
   s.summary     = "Expo app scaffolding"
   s.description = "Start your expo app with prettier, typescript, eslint, and react navigation."
   s.authors     = ["Nick Pachulski"]

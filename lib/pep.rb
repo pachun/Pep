@@ -19,7 +19,7 @@ module NeaHelpers
     package_json = JSON.parse(File.read("package.json"))
     package_json["scripts"][name] = script
     File.open("package.json", "w+") do |file|
-      file.write(JSON.pretty_generate(package_json))
+      file.write(JSON.pretty_generate(package_json) + "\n")
     end
   end
 end
@@ -128,7 +128,7 @@ class ConfigureTypescript
       tsconfig_json["compilerOptions"][name] = value
     end
     File.open("tsconfig.json", "w+") do |file|
-      file.write(JSON.pretty_generate(tsconfig_json))
+      file.write(JSON.pretty_generate(tsconfig_json) + "\n")
     end
   end
 
@@ -255,7 +255,7 @@ class SetSrcAsRootDirectory
     package_json = JSON.parse(File.read("tsconfig.json"))
     package_json["compilerOptions"]["baseUrl"] = "src"
     File.open("tsconfig.json", "w+") do |file|
-      file.write(JSON.pretty_generate(package_json))
+      file.write(JSON.pretty_generate(package_json) + "\n")
     end
   end
 
@@ -265,7 +265,7 @@ class SetSrcAsRootDirectory
     File.open("./App.tsx", "w+") do |file|
       file.write(
         <<~EOS
-        import App from "./src/App"
+        import App from "App"
 
         export default App
         EOS
@@ -288,7 +288,7 @@ class SetSrcAsRootDirectory
       else
         lines + [current_line]
       end
-    end.join("\n")
+    end.join("\n") + "\n"
   end
 
   def new_babel_config_js_lines
@@ -316,7 +316,7 @@ class SetSrcAsRootDirectory
     current_lines = File.read(".eslintrc.js").split("\n")
     new_lines = (
       current_lines[0..-2] + new_eslintrc_lines + [current_lines[-1]]
-    ).join("\n")
+    ).join("\n") + "\n"
   end
 
   def new_eslintrc_lines
@@ -391,10 +391,9 @@ class InstallReactNavigation
         useState<string>("")
       return (
         <View style={{ flex: 1, alignItems: "center" }}>
-          <Text style={{ fontWeight: "bold", marginTop: 100 }}>
+          <Text style={{ fontWeight: "bold", marginTop: 100, marginBottom: 100 }}>
             Open `src/App.tsx` to begin editing your app.
           </Text>
-          <Text style={{ marginTop: 100 }}>Home Screen</Text>
           <TextInput
             value={homeScreensTextInputValue}
             onChangeText={setHomescreensTextInputValue}
@@ -422,8 +421,8 @@ class InstallReactNavigation
     const DetailsScreen = ({ route }: DetailsProps): React.ReactElement => {
       const { homeScreensTextInputValue } = route.params
       return (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <Text>Details Screen says: {homeScreensTextInputValue}</Text>
+        <View style={{ flex: 1, alignItems: "center", paddingTop: 100 }}>
+          <Text>Home Screen Text Says: {homeScreensTextInputValue}</Text>
         </View>
       )
     }
