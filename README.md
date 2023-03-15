@@ -12,7 +12,9 @@ Begin your new expo app projects with some pep; that is, including:
 
 <img src="https://i.imgur.com/XlEyADo.png" width="650"/>
 
-## Get Started
+[Here is also a blog post with more about the motivation for creating pep](https://pachulski.me/create-new-expo-projects-with-some-pep).
+
+## Getting Started
 
 ```sh
 gem install pep
