@@ -1,14 +1,28 @@
+_This project is deprecated_
+
+Expo's gotten better at making it easy to create new projects with this stuff configured.
+
+I'd start with
+
+```sh
+npx create-expo-app@latest --template blank-typescript
+```
+
+Then check out their [using eslint and prettier docs](https://docs.expo.dev/guides/using-eslint/) and well as their [manual installation steps for adding expo-router](https://docs.expo.dev/router/installation/#manual-installation).
+
+---
+
 <img src="https://i.imgur.com/z7Bwr3F.gif" width="300"/>
 
 # Pep
 
 Begin your new expo app projects with some pep; that is, including:
 
-* [Prettier](https://prettier.io)
-* [Typescript](https://www.typescriptlang.org)
-* [Eslint](https://eslint.org)
-* [React Navigation](https://reactnavigation.org)
-* Absolute imports relative to your `src/` directory
+- [Prettier](https://prettier.io)
+- [Typescript](https://www.typescriptlang.org)
+- [Eslint](https://eslint.org)
+- [React Navigation](https://reactnavigation.org)
+- Absolute imports relative to your `src/` directory
 
 <img src="https://i.imgur.com/XlEyADo.png" width="650"/>
 
@@ -69,10 +83,7 @@ The default expo `tsconfig.json` combined with `pep`'s changes ([which are discu
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-native",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["DOM", "ESNext"],
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
@@ -93,13 +104,13 @@ Once a new project is created with pep, you can always import code relative to t
 If you are importing the component in `src/components/FancyTextInput.tsx` from `src/screens/HomeScreen.tsx`, you can do so like this:
 
 ```typescript
-import FancyTextInput from "components/FancyTextInput"
+import FancyTextInput from "components/FancyTextInput";
 ```
 
 ... Rather than doing it like this ...
 
 ```typescript
-import FancyTextInput from "../components/FancyTextInput"
+import FancyTextInput from "../components/FancyTextInput";
 ```
 
 I've found this setting enables easier refactoring when copying and pasting import lines, and especially when moving files around.
@@ -199,15 +210,15 @@ Something I really value about this setup (in addition to it setting up react na
 
 ```typescript
 type StackNavigatorParams = {
-  Home: undefined
-  Details: { homeScreensTextInputValue: string }
-}
+  Home: undefined;
+  Details: { homeScreensTextInputValue: string };
+};
 ```
 
 Which includes the creation of the stack navigator ...
 
 ```typescript
-const Stack = createNativeStackNavigator<StackNavigatorParams>()
+const Stack = createNativeStackNavigator<StackNavigatorParams>();
 ```
 
 ... As well as the creation of a type for the top level screens's component props ...
